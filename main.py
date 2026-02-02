@@ -26,7 +26,7 @@ def main(emails: list[Email]) -> None:
         mail.Body = ""
 
         for f in email["files"]:
-            attachment = attachment_path + f
+            attachment = str(attachment_path / f)
             mail.Attachments.Add(attachment)
 
         mail.Send()
